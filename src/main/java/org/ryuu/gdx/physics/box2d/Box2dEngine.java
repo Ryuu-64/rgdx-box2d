@@ -59,10 +59,15 @@ public class Box2dEngine implements Disposable {
     @ToString
     public static class Settings {
         public Vector2 gravity;
+
         public boolean isSleep;
+
         public float fixedTimeStep;
+
         public float maxStepTime;
+
         public int velocityIterations;
+
         public int positionIterations;
     }
 }
