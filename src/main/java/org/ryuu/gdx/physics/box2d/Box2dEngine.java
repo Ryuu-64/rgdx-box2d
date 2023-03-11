@@ -16,6 +16,7 @@ public class Box2dEngine implements Disposable {
 
     @Getter
     private final Box2DDebugRenderer box2DDebugRenderer;
+
     @Getter
     private final Settings settings;
 
