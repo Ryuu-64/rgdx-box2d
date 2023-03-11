@@ -13,10 +13,12 @@ import org.ryuu.gdx.physics.box2d.interfacecontact.InterfaceContactListener;
 public class Box2dEngine implements Disposable {
     @Getter
     private final World world;
+
     @Getter
     private final Box2DDebugRenderer box2DDebugRenderer;
     @Getter
     private final Settings settings;
+
     private float stepTime = 0;
 
     public Box2dEngine(Settings settings) {
@@ -37,7 +39,7 @@ public class Box2dEngine implements Disposable {
      * @param deltaTime Gdx.graphics.getDeltaTime()
      */
     public void step(float deltaTime) {
-        stepTime += Math.min(deltaTime, settings.maxStepTime); // avoid death spiral
+        stepTime += Math.min(deltaTime, settings.maxStepTime);
         float fixedTimeStep = settings.fixedTimeStep;
         while (stepTime >= fixedTimeStep) {
             world.step(fixedTimeStep, settings.velocityIterations, settings.positionIterations);
